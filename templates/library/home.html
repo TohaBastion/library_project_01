@@ -1,0 +1,21 @@
+{% extends 'library/base.html' %}
+{% block title %}Home{% endblock %}
+{% block content %}
+    <div class="container">
+    <h1>Welcome to the Library</h1>
+    <div class="row">
+        <div class="col-md-3">
+            <a href="{% url 'add_author' %}" class="btn btn-primary btn-block">Add Author</a>
+        </div>
+        <div class="col-md-3">
+            <a href="{% url 'add_book' %}" class="btn btn-primary btn-block">Add Book</a>
+        </div>
+        <div class="col-md-3">
+            <a href="{% url 'author_list' %}" class="btn btn-secondary btn-block">View Authors</a>
+        </div>
+        <div class="col-md-3">
+            <a href="{% url 'book_list' %}" class="btn btn-secondary btn-block">View Books</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

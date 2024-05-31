@@ -1,0 +1,16 @@
+{% extends "library/base.html" %}
+
+{% block title %}Author Detail{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Author Detail</h1>
+    <p>First Name: {{ author.first_name }}</p>
+    <p>Last Name: {{ author.last_name }}</p>
+    <p>Date of Birth: {{ author.date_of_birth }}</p>
+    <p>Date of Death: {{ author.date_of_death }}</p>
+    <a class="btn btn-warning" href="{% url 'update_author' author.pk %}">Update</a>
+    <a class="btn btn-danger" href="{% url 'delete_author' author.pk %}">Delete</a>
+    <a class="btn btn-secondary" href="{% url 'author_list' %}">Back to Authors</a>
+</div>
+{% endblock %}

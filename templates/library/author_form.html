@@ -1,0 +1,15 @@
+{% extends "library/base.html" %}
+
+{% block title %}Add/Update Author{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>{% if form.instance.pk %}Update{% else %}Add{% endif %} Author</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">{% if form.instance.pk %}Update{% else %}Add{% endif %}</button>
+    </form>
+    <a class="btn btn-secondary mt-3" href="{% url 'author_list' %}">Back to Authors</a>
+</div>
+{% endblock %}
